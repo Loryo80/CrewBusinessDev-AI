@@ -74,8 +74,7 @@ CrewBusinessDev-officiel/
 │   │   ├── __init__.py
 │   │   ├── sanitizer.py    # Input sanitization
 │   │   └── validators.py   # Input validation
-├── tests/                # Placeholder for unit/integration tests
-│   └── __init__.py
+│   
 └── reports/             # Output reports (created at runtime, gitignored)
 └── CrewBusinessDev/      # Python Virtual Environment (gitignored)
 ```
