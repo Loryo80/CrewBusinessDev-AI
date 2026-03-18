@@ -40,6 +40,42 @@ This project serves as a portfolio piece demonstrating key competencies relevant
     *   Includes basic input validation (`src/utils/validators.py`) and sanitization (`src/utils/sanitizer.py`).
     *   Configured logging (`logging_config.ini`) for monitoring and debugging.
 
+---
+
+## Agent Crews
+
+The system orchestrates **5 specialized crews** that execute sequentially:
+
+| Crew | Role | What It Does |
+|------|------|-------------|
+| **Market Research** | Market Analyst, Competitor Researcher, Consumer Profiler | Analyzes target market size, competitor landscape, and consumer behavior |
+| **Regulatory Compliance** | Compliance Analyst, Standards Researcher | Maps import regulations, certifications, and builds compliance roadmaps |
+| **Supply Chain** | Logistics Strategist, Supplier Evaluator | Evaluates suppliers, logistics routes, and inventory management |
+| **Sales & Marketing** | Brand Strategist, Demand Generator | Develops marketing strategies, brand positioning, and demand generation plans |
+| **Implementation & Launch** | Launch Planner, Execution Manager | Creates go-to-market timelines and launch execution strategies |
+
+Each crew uses **hierarchical process** with an LLM manager overseeing agent collaboration.
+
+### Business Scenario Inputs
+
+| Input | Description |
+|-------|-------------|
+| Company Name | Your organization |
+| Website | Company website for context |
+| Product | Product or service to expand |
+| Industry | Manufacturing, Food & Beverage, Technology, Healthcare, or Retail |
+| Target Country | Country for market entry |
+| Strategic Goals | Market Entry, Product Adaptation, Regulatory Compliance, and/or Competitive Positioning |
+
+### Goal Metrics
+
+| Goal | Tracked Metrics |
+|------|----------------|
+| Market Entry | Market penetration, Brand recognition |
+| Product Adaptation | Localization score, Customer satisfaction |
+| Regulatory Compliance | Compliance rate, Risk assessment |
+| Competitive Positioning | Market share, Competitive advantage |
+
 ## Technology Stack
 
 *   **Core Framework:** Python 3.10+
@@ -53,7 +89,7 @@ This project serves as a portfolio piece demonstrating key competencies relevant
 ## Project Structure
 
 ```
-CrewBusinessDev-officiel/
+CrewBusinessDev-AI/
 ├── .env                 # Local environment variables (API Keys)
 ├── .env.example         # Example environment variable structure
 ├── .gitignore           # Standard Python/IDE gitignore
@@ -84,7 +120,7 @@ CrewBusinessDev-officiel/
 1.  **Clone the repository:**
     ```bash
     git clone <repository_url>
-    cd CrewBusinessDev-officiel
+    cd CrewBusinessDev-AI
     ```
 
 2.  **Create and activate a virtual environment:** (Recommended)
@@ -123,7 +159,32 @@ Navigate to the URL provided by Streamlit (usually `http://localhost:8501`).
 
 ## Environment Variables Required
 
+> **Default login:** username `admin`, password `admin`. Change these before any production use.
+
 *   `OPENAI_API_KEY`: For OpenAI models (e.g., GPT-4o-mini).
 *   `SERPER_API_KEY`: For the SerperDevTool search functionality.
 *   `GOOGLE_API_KEY`: For Google Generative AI models (e.g., Gemini-1.5-flash).
 *   `MISTRAL_API_KEY`: For Mistral AI models (e.g., mistral-large-latest). 
+
+---
+
+## Output
+
+Reports are saved as JSON files organized by:
+```
+reports/{company}/{product}/{country}/report_TIMESTAMP.json
+```
+
+You can also add **custom tasks** to any crew during execution via the UI.
+
+---
+
+## License
+
+MIT
+
+## Author
+
+**Yassine Senhaji** — AI Solution Architect
+- [www.digitalsy.ma](https://www.digitalsy.ma/)
+- [github.com/Loryo80](https://github.com/Loryo80)
